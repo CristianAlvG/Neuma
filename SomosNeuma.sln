@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SomosNeuma", "SomosNeuma\SomosNeuma.csproj", "{34F1A575-566E-4725-BC46-0B79CEF46F3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neuma.DataAccess", "Neuma.DataAccess\Neuma.DataAccess.csproj", "{DA00B47A-6A7D-4617-8F84-44E0519E2DAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neuma.Models", "Neuma.Models\Neuma.Models.csproj", "{051CD9CB-BFC6-4C2D-9A98-090D76FD0757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neuma.Utility", "Neuma.Utility\Neuma.Utility.csproj", "{3FED068A-5A20-4EA1-A112-CF0EE37FE307}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34F1A575-566E-4725-BC46-0B79CEF46F3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F1A575-566E-4725-BC46-0B79CEF46F3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F1A575-566E-4725-BC46-0B79CEF46F3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F1A575-566E-4725-BC46-0B79CEF46F3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA00B47A-6A7D-4617-8F84-44E0519E2DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA00B47A-6A7D-4617-8F84-44E0519E2DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA00B47A-6A7D-4617-8F84-44E0519E2DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA00B47A-6A7D-4617-8F84-44E0519E2DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{051CD9CB-BFC6-4C2D-9A98-090D76FD0757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{051CD9CB-BFC6-4C2D-9A98-090D76FD0757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{051CD9CB-BFC6-4C2D-9A98-090D76FD0757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{051CD9CB-BFC6-4C2D-9A98-090D76FD0757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FED068A-5A20-4EA1-A112-CF0EE37FE307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FED068A-5A20-4EA1-A112-CF0EE37FE307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FED068A-5A20-4EA1-A112-CF0EE37FE307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FED068A-5A20-4EA1-A112-CF0EE37FE307}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {633046E7-E2E8-43D8-9D75-2058444C8CE7}
+	EndGlobalSection
+EndGlobal

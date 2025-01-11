@@ -1,0 +1,120 @@
+﻿
+.icon-burger{
+   color: white;
+   font-size: 2rem;
+}
+
+
+.dropdown-menu{
+    background-color: black !important;
+    border: 1px solid white;
+}
+
+.dropdown-item{
+    color:white !important;
+}
+
+.special-button{
+    position:relative;
+}
+
+.special-button:after, .special-button:before{
+    content: '';
+    position:absolute;
+    width:0;
+    height:0;
+    transition: all 0.4s, opacity 0.1s 0.4s;
+    opacity:0;
+}
+
+    .special-button:after {
+        bottom: 0px;
+        right: 0px;
+        border-bottom: 3px solid #037cdb;
+        border-right: 3px solid #037cdb;
+    }
+
+    .special-button:before {
+        top: 0px;
+        left: 0px;
+        border-left: 3px solid #037cdb;
+        border-top: 3px solid #037cdb;
+    }
+
+    .special-button:hover:after, .special-button:hover:before {
+        width: calc(100% + 5px);
+        height: calc(100% + 5px);
+        transition: 0.4s, opacity 0.1s;
+        opacity: 1;
+    }
+
+
+.dropdown-item:hover {
+    background-color: #037cdb;
+}
+
+.navbar-toggler{
+    border:none;
+    font-size:1.5rem;
+}
+
+.navbar-toggler:focus, .btn-close{
+    box-shadow:none;
+    outline:none;
+}
+
+.nav-link{
+    position:relative;
+    font-weight:600;
+}
+
+@media(min-width:991px){
+    .border-link::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 2px;
+        transform: translateX(-50%);
+        width: 0%;
+        transition: 0.3s ease-in-out;
+        background-color: white;
+        visibility: hidden;
+    }
+
+    .border-link:hover:before, .border-link.active:before {
+        width: 100%;
+        visibility: visible;
+    }
+}
+
+
+.front-page{
+    background-image:url("/images/Worship.jpeg");
+    width:100%;
+    height:450px;
+    margin-top:0px;
+}
+
+.custom-image {
+    width: 100%; /* Default width for larger screens */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 500px; /* Optional: sets a maximum height */
+}
+
+/* Adjust image size for smaller screens */
+@media (max-width: 768px) {
+    .custom-image {
+        width: 80%; /* Make the image smaller for tablets and small screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 576px) {
+    .custom-image {
+        width: 100%; /* For very small screens like phones */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+

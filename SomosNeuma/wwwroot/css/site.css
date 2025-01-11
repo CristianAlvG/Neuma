@@ -1,0 +1,75 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color:black;
+}
+
+.navbar, .offcanvas, .footer {
+    background-color: #141414 !important;
+}
+
+.navbar{
+    height:80px;
+    border-radius:16px;
+    padding:0.5rem;
+    margin-top:20px;
+}
+
+
+/*
+    Styles of Home
+*/
+
+.description-square {
+    background: rgb(38,41,45);
+    background: radial-gradient(circle, rgba(38,41,45,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.bebas-neue-regular {
+    font-family: "Bebas Neue", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px; /* Cambia el tamaño aquí */
+    color: #0897f4;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.pHome {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+@media(min-width:991px) {
+    .pHome {
+        font-size: 1.3rem;
+    }
+}
+
+.login-container{
+    background:white;
+
+}
+
+
+
+
