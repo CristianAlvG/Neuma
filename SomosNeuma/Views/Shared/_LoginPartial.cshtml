@@ -1,23 +1,37 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Neuma.Models
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
+
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-    </li>
-    <li class="nav-item">
-        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link btn-primary border-0">Logout</button>
-        </form>
-    </li>
+        var currentuser = await UserManager.GetUserAsync(User);
+        
+
+        <li class="nav-item dropdown">
+            <a class="nav-link border-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i style="color:dodgerblue" class="bi bi-person-check-fill"></i> @currentuser?.UserName
+            </a>
+            <ul class="dropdown-menu text-center text-lg-start">
+                <li class="nav-item">
+                    <a id="manage" class="dropdown-item" asp-area="Identity"
+                       asp-page="/Account/Manage/Index" title="Manage">User Manage</a>
+                </li>
+                <li class="nav-item">
+                    <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "User" })">
+                        <button id="logout" type="submit" class="dropdown-item btn btn-link border-0">Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </li>
+
+    
 }
 else
 {
-    
         <li class="nav-item mt-sm-0 mt-5">
             <a class="nav-link btn btn-outline-warning text-white" id="login" asp-area="Identity" 
             asp-page="/Account/Login"><i class="bi bi-person-circle"></i> Login</a>

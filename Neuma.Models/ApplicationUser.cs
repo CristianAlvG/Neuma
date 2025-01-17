@@ -11,7 +11,8 @@ namespace Neuma.Models
     public class ApplicationUser:IdentityUser
     {
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string? LastName { get; set; }
         public string? Area { get; set; }
         public string? Photo { get; set; }
 

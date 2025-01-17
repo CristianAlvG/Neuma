@@ -18,19 +18,21 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-  background-color:black;
+    margin-bottom: 60px;
+    background-color: white;
 }
 
 .navbar, .offcanvas, .footer {
-    background-color: #141414 !important;
+    background-color: #131212 !important;
 }
 
-.navbar{
-    height:80px;
-    border-radius:16px;
-    padding:0.5rem;
-    margin-top:20px;
+.navbar {
+    height: 80px;
+    padding: 2rem;
+    position: relative;
+    -webkit-box-shadow: 0px 10px 12px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 12px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 12px -4px rgba(0,0,0,0.75);
 }
 
 
@@ -48,7 +50,15 @@ body {
     font-weight: 500;
     font-style: normal;
     font-size: 28px; /* Cambia el tamaño aquí */
-    color: #0897f4;
+    color: black;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+}
+
+.big_bebas-neue-regular{
+    font-family: "Bebas Neue", serif;
+    font-style: normal;
+    font-size: 50px; /* Cambia el tamaño aquí */
+    color: black;
     text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
 }
 
@@ -63,13 +73,16 @@ body {
     .pHome {
         font-size: 1.3rem;
     }
+
+    .big_bebas-neue-regular{
+        font-size:150px;
+    }
 }
 
 .login-container{
     background:white;
 
 }
-
 
 
 

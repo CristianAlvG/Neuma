@@ -20,7 +20,7 @@ namespace Neuma.DataAccess.Repository
 
         public void Update(TopFeature topFeature)
         {
-            //_db..Update(topFeature);
+            _db.Update(topFeature);
         }
     }
 }

@@ -10,7 +10,6 @@ namespace Neuma.DataAccess.Repository.IRepository
     {
         ITopFeatureRepository TopFeature { get; }
 
-
         void Save();
     }
 }

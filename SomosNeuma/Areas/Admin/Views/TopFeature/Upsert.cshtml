@@ -1,0 +1,55 @@
+﻿@model TopFeature
+
+    <div class="container mt-5">
+
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                Editar Feature
+            </div>
+            <div class="card-body">
+                <div class="row">
+                <div class="col-9">
+                    <form class="row" method="post" enctype="multipart/form-data">
+                        <input asp-for="Id" hidden />
+                        <div asp-validation-summary="ModelOnly"></div>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                <label asp-for="Title"></label>
+                                <input asp-for="Title" type="type" class="form-control" />
+                                <span class="text-danger" asp-validation-for="Title"></span>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label asp-for="Description"></label>
+                                <input asp-for="Description" type="text" class="form-control" />
+                                <span class="text-danger" asp-validation-for="Description"></span>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label asp-for="Image"></label>
+                                <input name="file" type="file" class="form-control" />
+                            </div>
+                            <div class="container text-end">
+                                @if (Model.Id == 0)
+                                {
+                                    <button type="submit" class="btn btn-primary">Insertar</button>
+                                }
+                                else
+                                {
+                                    <button type="submit" class="btn btn-primary"><i class="bi bi-pencil-fill"></i> Editar</button>
+                                }
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+                <div class="col-3">
+                    <img src="@Url.Content(Model.Image)" class="ratio ratio-4x3" alt="Alternate Text" />
+                </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+    </div>
+

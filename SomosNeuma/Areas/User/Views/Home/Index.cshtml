@@ -1,0 +1,101 @@
+﻿@model List<TopFeature>
+
+
+<!-- Swiper Section-->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="~/images/wallpaper1.jpg" alt="Alternate Text" style="height:500px;"/></div>
+        <div class="swiper-slide"><img src="~/images/wallpaper2.jpg" alt="Alternate Text" style="height:500px;" /></div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+<!--Somos Neuma Section-->
+<div class="mt-5 container justify-content-center align-items-center text-center">
+    <span class="big_bebas-neue-regular">SOMOS NEUMA</span>
+
+    <div class="card-deck text-dark">
+        <div class="row mb-3 g-3">
+            @foreach (var feature in Model)
+            {
+                <div class="col-12 col-lg-4 col-sm-6 shadow">
+                    <div class="card p-3">
+                        <img class="card-img-top img-fluid" src="@Url.Content(@feature.Image)" style="height:400px;" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@feature.Title</h5>
+                            <p class="card-text">@feature.Description</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated</small>
+                        </div>
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
+                            <div class="container justify-content-end text-end">
+                                <a asp-area="Admin" asp-controller="TopFeature" asp-action="Upsert" class="btn btn-primary" asp-route-id="@feature.Id">
+                                    <i class="bi bi-pencil-fill"></i> Editar
+                                </a>
+                            </div>
+                                
+
+                        }
+                        
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+</div>
+
+
+<!--Seccion de Ubicación-->
+
+<div class="container mt-5 mb-3">
+    <h2 class="bebas-neue-regular text-center">Ubicación de la Iglesia Oasis</h2>
+    <p>Estamos ubicados en Moravia, una zona tranquila y accesible al norte de San José, Costa Rica. 
+        Si vienes en transporte público, puedes tomar las rutas de bus que pasan cerca de la iglesia. 
+        Si llegas en coche, estamos a solo unos minutos del centro de Moravia y contamos con estacionamiento disponible. 
+        La iglesia se encuentra frente a Plaza de las Americas.</p>
+    <!-- Hacemos el iframe responsive -->
+    <div class="ratio ratio-4x3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.6258969406913!2d-84.04610095272321!3d9.965050408001641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e443a6b9f50b%3A0xa3402e845da6099b!2sIglesia%20Oasis!5e0!3m2!1ses-419!2scr!4v1736973537344!5m2!1ses-419!2scr"
+                width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 10000,
+                disableOnInteraction: false,
+            },
+            loop: false,
+            effect: 'cube',
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+            },
+        });
+    });
+</script>

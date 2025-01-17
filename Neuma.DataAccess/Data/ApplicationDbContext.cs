@@ -41,7 +41,7 @@ namespace Neuma.DataAccess.Data
                     Id = 1,
                     Title = "¿Quienes somos?",
                     Description = "Somos gente que intenta vivir su vida siguiendo lo que Jesús enseñaba y en el camino nos dimos cuenta que era más facil hacerlo entre amigos",
-                    Image = "~/images/Nico.jpg"
+                    Image = "~/images/SomosUno.jpg"
                 },
                 new TopFeature
                 {
@@ -55,14 +55,7 @@ namespace Neuma.DataAccess.Data
                     Id = 3,
                     Title = "¿Donde estamos?",
                     Description = "Neuma no tiene un espacio logico definido porque somos un grupo de amigos",
-                    Image = "~/images/SomosUno.jpg"
-                },
-                new TopFeature
-                {
-                    Id = 4,
-                    Title = "¿Donde estamos?",
-                    Description = "Neuma no tiene un espacio logico definido porque somos un grupo de amigos",
-                    Image = "~/images/SomosUno.jpg"
+                    Image = "~/images/Nico.jpg"
                 });
         }
 

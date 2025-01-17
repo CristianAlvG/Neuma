@@ -176,12 +176,10 @@ namespace Neuma.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -218,12 +216,10 @@ namespace Neuma.DataAccess.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -263,7 +259,7 @@ namespace Neuma.DataAccess.Migrations
                         {
                             Id = 1,
                             Description = "Somos gente que intenta vivir su vida siguiendo lo que Jesús enseñaba y en el camino nos dimos cuenta que era más facil hacerlo entre amigos",
-                            Image = "~/images/Nico.jpg",
+                            Image = "~/images/SomosUno.jpg",
                             Title = "¿Quienes somos?"
                         },
                         new
@@ -277,14 +273,7 @@ namespace Neuma.DataAccess.Migrations
                         {
                             Id = 3,
                             Description = "Neuma no tiene un espacio logico definido porque somos un grupo de amigos",
-                            Image = "~/images/SomosUno.jpg",
-                            Title = "¿Donde estamos?"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Neuma no tiene un espacio logico definido porque somos un grupo de amigos",
-                            Image = "~/images/SomosUno.jpg",
+                            Image = "~/images/Nico.jpg",
                             Title = "¿Donde estamos?"
                         });
                 });
@@ -296,8 +285,11 @@ namespace Neuma.DataAccess.Migrations
                     b.Property<string>("Area")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("FirstName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Photo")

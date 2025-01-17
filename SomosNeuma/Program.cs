@@ -4,6 +4,8 @@ using Neuma.DataAccess.Repository;
 using Neuma.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Identity;
 using Neuma.Models;
+using Neuma.Utility;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +16,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => 
+options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 
 
 //5- Add RazorPages
@@ -23,6 +26,10 @@ builder.Services.AddRazorPages();
 
 // 3 Setting Unit of Work
 builder.Services.AddScoped<IUnitOfWork,  UnitOfWork>();
+
+//Add Email Sender to fix the error
+builder.Services.AddScoped<IEmailSender, EmailSender>();
+
 
 var app = builder.Build();
 
@@ -34,15 +41,23 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseRouting();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{area=User}/{controller=Home}/{action=Index}/{id?}"
+);
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+//4- Add UseAuthentication
+app.UseAuthentication();
 
 app.UseAuthorization();
 
-//4- Add UseAuthentication
-app.UseAuthentication();
+
 
 app.MapControllerRoute(
     name: "default",
